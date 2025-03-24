@@ -15,7 +15,7 @@ import pandas as pd
 
 ## Step 2: Loading the Dataset 📊
 
-We load `diabetes.csv`, extract input features (`X`), and define the target variable (`y`). The features (`X`) represent various health indicators such as glucose levels, blood pressure, and BMI, while the target variable (`y`) indicates whether the patient has diabetes (1) or not (0).
+We load `diabetes.csv`, extract input features (`X`), and define the target variable (`y`). The features (`X`) represent various health indicators such as glucose levels, blood pressure, and BMI, while the target variable (`y`) indicates whether the patient has diabetes (1) or not (0). Download csv here [diabetes.csv](https://raw.githubusercontent.com/gbhgit/blog-post/refs/heads/main/csv-files/diabetes.csv)
 
 ```python
 data = pd.read_csv("diabetes.csv")
