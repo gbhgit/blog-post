@@ -4,7 +4,7 @@
 
 In this blog post, we'll walk through the process of building a simple neural network from scratch using Python. We'll break down the implementation into key steps and use the `diabetes.csv` dataset as an example to train our network.
 
-### Neural Network Basic Explanation
+### Neural Network Explanation
 
 #### 🤔 What are Weights ? 
 Weights are numerical values that determine the importance of input features in a neural network. They are adjusted during training to minimize error and improve the model’s predictions. Each connection between neurons has an associated weight that influences the network's learning process.
@@ -29,9 +29,9 @@ For a simple neural network, the equation that relates the input, weights, bias,
 ![Screenshot from 2025-03-25 08-36-09](https://github.com/user-attachments/assets/f6b9b972-a1a1-4f62-9e39-8ba3d5628692)
 
 ## 🎉 Fun Time
-Now i will show the steps for creating a Simple Neural Network, using a real database. **I hope you have fun !**
+Now i will show the steps to create a Simple Neural Network, using a real database. **I hope you have fun !**
 
-### Step 1: Importing Required Libraries ⚙️
+### Step 1: Importing Required Libraries
 
 We need `numpy` for mathematical operations and `pandas` for handling our dataset.
 
