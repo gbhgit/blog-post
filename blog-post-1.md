@@ -2,7 +2,7 @@
 
 ## Introduction 🎯
 
-In this blog post, we'll walk through the process of building a simple neural network from scratch using Python. Understanding the fundamentals of neural networks by implementing them from scratch is a great way to grasp key concepts like weight adjustments, activation functions, and gradient descent before moving on to more complex frameworks. We'll break down the implementation into key steps and use the `diabetes.csv` dataset as an example to train our network.
+In this blog post, we'll walk through the process of building a simple neural network from scratch using Python. We'll break down the implementation into key steps and use the `diabetes.csv` dataset as an example to train our network.
 
 ## Step 1: Importing Required Libraries ⚙️
 
@@ -15,7 +15,7 @@ import pandas as pd
 
 ## Step 2: Loading the Dataset 📊
 
-We load `diabetes.csv`, extract input features (`X`), and define the target variable (`y`). The features (`X`) represent various health indicators such as glucose levels, blood pressure, and BMI, while the target variable (`y`) indicates whether the patient has diabetes (1) or not (0). Download csv here [diabetes.csv](https://raw.githubusercontent.com/gbhgit/blog-post/refs/heads/main/csv-files/diabetes.csv)
+We load `diabetes.csv`, extract input features (`X`), and define the target variable (`y`). The features (`X`) represent various health indicators such as glucose levels, blood pressure, and BMI, while the target variable (`y`) indicates whether the patient has diabetes (1) or not (0). You can download .csv file here [diabetes.csv](https://raw.githubusercontent.com/gbhgit/blog-post/refs/heads/main/csv-files/diabetes.csv)
 
 ```python
 data = pd.read_csv("diabetes.csv")
