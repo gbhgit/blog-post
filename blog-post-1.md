@@ -18,6 +18,18 @@ Activation functions introduce non-linearity into the model, allowing it to lear
 
 - **Tanh**: Outputs values between -1 and 1, often used in hidden layers.
 
+### Simple Neural Network Equation
+For a simple neural network, the equation that relates the input, weights, bias, and output is **y = f (Wx + b)**.
+
+- **x = Input input matrix (e.g., features of the data)**
+- **W = Weight matrix (learnable parameters)**
+- **b = Bias vector (learnable parameters)**
+- **f = Activation function (e.g., ReLU, Sigmoid, or Softmax)**
+- **y = Output matrix**
+
+![Screenshot from 2025-03-25 08-25-53](https://github.com/user-attachments/assets/6229c3dd-e012-45a9-8cbc-d9e3555a09b7)
+
+
 ## Step 1: Importing Required Libraries ⚙️
 
 We need `numpy` for mathematical operations and `pandas` for handling our dataset.
