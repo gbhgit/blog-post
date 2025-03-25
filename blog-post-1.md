@@ -4,6 +4,17 @@
 
 In this blog post, we'll walk through the process of building a simple neural network from scratch using Python. We'll break down the implementation into key steps and use the `diabetes.csv` dataset as an example to train our network.
 
+## What Are Weights and Activation Functions? 🤔
+
+### Weights
+Weights are numerical values that determine the importance of input features in a neural network. They are adjusted during training to minimize error and improve the model’s predictions. Each connection between neurons has an associated weight that influences the network's learning process.
+
+### Activation Functions
+Activation functions introduce non-linearity into the model, allowing it to learn complex patterns. The most common activation functions include:
+- **Sigmoid**: Outputs values between 0 and 1, useful for probability-based predictions.
+- **ReLU (Rectified Linear Unit)**: Outputs zero for negative values and linear for positive values, commonly used in deep networks.
+- **Tanh**: Outputs values between -1 and 1, often used in hidden layers.
+
 ## Step 1: Importing Required Libraries ⚙️
 
 We need `numpy` for mathematical operations and `pandas` for handling our dataset.
@@ -15,7 +26,7 @@ import pandas as pd
 
 ## Step 2: Loading the Dataset 📊
 
-We load `diabetes.csv`, extract input features (`X`), and define the target variable (`y`). The features (`X`) represent various health indicators such as glucose levels, blood pressure, and BMI, while the target variable (`y`) indicates whether the patient has diabetes (1) or not (0). You can download .csv file here [diabetes.csv](https://raw.githubusercontent.com/gbhgit/blog-post/refs/heads/main/csv-files/diabetes.csv)
+We load `diabetes.csv`, extract input features (`X`), and define the target variable (`y`). The features (`X`) represent various health indicators such as glucose levels, blood pressure, and BMI, while the target variable (`y`) indicates whether the patient has diabetes (1) or not (0). Download csv here [diabetes.csv](https://raw.githubusercontent.com/gbhgit/blog-post/refs/heads/main/csv-files/diabetes.csv)
 
 ```python
 data = pd.read_csv("diabetes.csv")
@@ -148,8 +159,3 @@ print(f"Precision: {precision:.4f}")
 print(f"Recall: {recall:.4f}")
 print(f"F1 Score: {f1_score:.4f}")
 ```
-
-## Conclusion 🎉
-
-We've successfully implemented a simple neural network from scratch using Python. This model learns from data through weight adjustments and can make predictions based on learned patterns. While this is a basic implementation, more complex models with multiple layers and optimizations can yield better results.
-
