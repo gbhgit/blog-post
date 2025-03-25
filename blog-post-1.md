@@ -26,11 +26,9 @@ For a simple neural network, the equation that relates the input, weights, bias,
 - **f** = Activation function (e.g., ReLU, Sigmoid, or Softmax)
 - **y** = Output matrix
 
-| Simple Neural Network Example |
-|----------|
-| ![Screenshot from 2025-03-25 08-36-09](https://github.com/user-attachments/assets/f6b9b972-a1a1-4f62-9e39-8ba3d5628692) |
+![Screenshot from 2025-03-25 08-36-09](https://github.com/user-attachments/assets/f6b9b972-a1a1-4f62-9e39-8ba3d5628692)
 
-## 🎉 Fun Part
+## 🎉 Fun Time
 Now i will show the steps for creating a Simple Neural Network, using a real database. **I hope you have fun !**
 
 ### Step 1: Importing Required Libraries ⚙️
