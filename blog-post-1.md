@@ -78,36 +78,75 @@ predictions = predict(X, synaptic_weights)
 import numpy as np
 import pandas as pd
 
-# Load dataset
-data = pd.read_csv("diabetes.csv")
-X = data.iloc[:, :-1].values
-y = data.iloc[:, -1].values.reshape(-1, 1)
+def train_test_split(X, y, test_size=0.2, seed=None):
+    if seed:
+        np.random.seed(seed)
 
-# Initialize weights
-np.random.seed(1)
-synaptic_weights = 2 * np.random.random((X.shape[1], 1)) - 1
+    indices = np.arange(X.shape[0])
+    np.random.shuffle(indices)
+
+    test_size = int(len(indices) * test_size)
+    train_indices, test_indices = indices[test_size:], indices[:test_size]
+
+    return X[train_indices], X[test_indices], y[train_indices], y[test_indices]
 
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 def train(X, y, weights, iterations=10000, learning_rate=0.1):
-    for iteration in range(iterations):
+    for _ in range(iterations):
         input_layer = X
         outputs = sigmoid(np.dot(input_layer, weights))
-        
+
         error = y - outputs
         adjustments = error * (outputs * (1 - outputs))
-        
-        weights += learning_rate * np.dot(input_layer.T, adjustments)
-    
-    return weights
 
-synaptic_weights = train(X, y, synaptic_weights)
+        weights += learning_rate * np.dot(input_layer.T, adjustments)
+
+    return weights
 
 def predict(X, weights):
     return sigmoid(np.dot(X, weights))
 
-predictions = predict(X, synaptic_weights)
+# Load dataset
+data = pd.read_csv("https://raw.githubusercontent.com/gbhgit/blog-post/refs/heads/main/csv-files/diabetes.csv")
+X = data.iloc[:, :-1].values
+y = data.iloc[:, -1].values.reshape(-1, 1)
+
+# Normalize the data
+X = (X - X.mean(axis=0)) / X.std(axis=0)
+
+# Split data into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, seed=1)
+
+# Initialize weights
+np.random.seed(1)
+synaptic_weights = 2 * np.random.random((X_train.shape[1], 1)) - 1
+
+# Train the model
+synaptic_weights = train(X_train, y_train, synaptic_weights)
+
+# Make predictions on test data
+y_pred = predict(X_test, synaptic_weights)
+y_pred_labels = (y_pred > 0.5).astype(int)  # Convert probabilities to 0 or 1
+
+# Calculate TP, TN, FP, FN
+TP = np.sum((y_test == 1) & (y_pred_labels == 1))
+TN = np.sum((y_test == 0) & (y_pred_labels == 0))
+FP = np.sum((y_test == 0) & (y_pred_labels == 1))
+FN = np.sum((y_test == 1) & (y_pred_labels == 0))
+
+# Compute metrics
+accuracy = (TP + TN) / (TP + TN + FP + FN)
+precision = TP / (TP + FP) if (TP + FP) != 0 else 0
+recall = TP / (TP + FN) if (TP + FN) != 0 else 0
+f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) != 0 else 0
+
+# Show results
+print(f"Accuracy: {accuracy:.4f}")
+print(f"Precision: {precision:.4f}")
+print(f"Recall: {recall:.4f}")
+print(f"F1 Score: {f1_score:.4f}")
 ```
 
 ## Conclusion 🎉
