@@ -11,8 +11,11 @@ Weights are numerical values that determine the importance of input features in 
 
 ### Activation Functions
 Activation functions introduce non-linearity into the model, allowing it to learn complex patterns. The most common activation functions include:
+
 - **Sigmoid**: Outputs values between 0 and 1, useful for probability-based predictions.
+
 - **ReLU (Rectified Linear Unit)**: Outputs zero for negative values and linear for positive values, commonly used in deep networks.
+
 - **Tanh**: Outputs values between -1 and 1, often used in hidden layers.
 
 ## Step 1: Importing Required Libraries ⚙️
